@@ -1,7 +1,13 @@
-import {PythonShell} from 'python-shell';
+//import {PythonShell} from 'python-shell';
+var PythonShell = require('python-Shell');
 var express = require('express');
 var app = express();
-let pyshell = new PythonShell('trasmisor.py');
+//let pyshell = new PythonShell('trasmisor.py');
+//var pyshell = PythonShell();
+PythonShell.run('trasmisor.py', function (err) {
+    if (err) throw err;
+    console.log('finished trasmisor');
+  });
 
 // Creates a server which runs on port 3000 and
 // can be accessed through localhost:3000
